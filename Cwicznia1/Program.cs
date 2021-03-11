@@ -6,6 +6,12 @@ namespace Cwicznia1
     {
         static void Main(string[] args)
         {
+            /*
+            int powierzchnia = 100, osoby = 10;
+            double gestoscZaludnienia = Convert.ToDouble(osoby) / powierzchnia;
+            Console.WriteLine(gestoscZaludnienia); 
+
+
             int[] tab = new int[] { 2, 3, 4, 5, 6, 3, 3, 31, 4 };
 
             for(int i = 0; i<=8; i++)
@@ -113,7 +119,7 @@ namespace Cwicznia1
                     liczba--;
                 }
             }
-
+            */
             //Program sprawdzajacy wykorzystujacy do while 
             /*
                Stwórz program, który będzie wczytywał liczbę podaną przez użytkownika.
@@ -123,6 +129,7 @@ namespace Cwicznia1
                   wyświetl komunikat kończący, jeśli nie, wyświetl prośbę o wczytanie liczby. 
                Użyj do tego pętli do ...while.
             */
+            /*
 
             Console.WriteLine();
             Console.WriteLine("Podaj liczbe ");
@@ -140,7 +147,147 @@ namespace Cwicznia1
                 }
 
             } while (true);
+            */
 
+
+
+
+
+            // zadanie 4.5 
+            /*
+
+            int[] tab1 = new int [] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            int[] tab2 = new int[tab1.Length];
+
+
+            
+            foreach (int x in tab1)
+            {
+                Console.Write(x + " ");
+            }
+
+            for (int i = 0; i < tab1.Length; i++)
+            {
+                if (i+1==tab1.Length)
+                {
+                    tab2[0] = tab1[i];
+                    break;
+                }
+                else
+                {
+                    tab2[i + 1] = tab1[i];
+                }
+                
+            }
+
+            Console.WriteLine();
+            foreach (int x in tab2)
+            {
+                Console.Write(x + " ");
+            }
+
+            */
+
+
+
+            //zadanie 4.6
+            int[,] tab1 = new int[,]
+            {
+                { 1, 2, 3 },
+                { 1, 2, 3 }    
+            };
+            int[,] tab2 = new int[,]
+           {
+                { 1, 2, 3 },//2 4 6
+                { 1, 4, 3 }  //2 6 6
+           };
+
+            int[,] tab3 = new int[tab1.GetLength(0), tab1.GetLength(1)];
+
+
+            for (int i = 0; i < tab1.GetLength(0); i++)
+            {
+                for (int j = 0; j < tab1.GetLength(1); j++)
+                {
+                    tab3[i, j] = tab1[i, j] + tab2[i, j];
+                }
+            }
+
+            Console.WriteLine();
+
+            foreach (var x in tab3)
+            {
+                Console.Write(x);
+            }
+
+
+            /*
+            int suma = 0;
+
+            for (int i = 0; i < tab1.GetLength(0); i++)
+            {
+
+                for (int j = 0; j < tab1.GetLength(1); j++)
+                {
+                    if (i==j)
+                    {
+                        suma += tab1[i, j];
+                    }
+                    Console.Write(tab1[i, j]);
+                }
+                Console.WriteLine();
+            }
+
+
+            Console.WriteLine(suma);
+            */
+
+            /*
+            Console.WriteLine();
+            string napis;
+            Console.WriteLine("Podaj napis ");
+            napis = Console.ReadLine();
+            int liczba = 1;
+            for (int i = 0; i < napis.Length; i++)
+            {
+                if (napis[i]== ' ')
+                {
+                    liczba++;
+                }
+            }
+
+            Console.WriteLine("Liczba wyrazów to" + liczba);  */
+
+
+            // zadnie 4.10 wypisz miesiąc 
+
+
+            Console.WriteLine("Podaj datę w formacie DD-MM-RRRR");
+            string data = Console.ReadLine();
+
+            string[] datatab;
+
+            datatab = data.Split('-');
+
+            string[] miesiace = new string[]
+            {
+                "Styczeń",
+                "Luty",
+                "Marzec",
+                "Kwiecień",
+                "Maj",
+                "Czerwiec",
+                "Lipiec",
+                "Sierpień",
+                "Wrzesień",
+                "Październik",
+                "Listopad",
+                "Grudzień"
+                
+            };
+
+            string miesiac = miesiace[int.Parse(datatab[1])-1];
+            Console.WriteLine("Podany miesiąc to : {0}",miesiac);
         }
     }
 }
